@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://JadeQin.github.io/</id>
     <title>技术随笔</title>
-    <updated>2019-06-15T08:54:05.002Z</updated>
+    <updated>2019-06-15T08:56:22.144Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://JadeQin.github.io/"/>
     <link rel="self" href="https://JadeQin.github.io//atom.xml"/>
@@ -10,17 +10,6 @@
     <logo>https://JadeQin.github.io//images/avatar.png</logo>
     <icon>https://JadeQin.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 技术随笔</rights>
-    <entry>
-        <title type="html"><![CDATA[about]]></title>
-        <id>https://JadeQin.github.io//post/about</id>
-        <link href="https://JadeQin.github.io//post/about">
-        </link>
-        <updated>2019-06-15T08:49:03.000Z</updated>
-        <content type="html"><![CDATA[<hr>
-<h2 id="title-aboutdate-2018-05-07t1746390800">title: &quot;About&quot;
-date: 2018-05-07T17:46:39+08:00</h2>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Kubernetes 服务发现 — kube-dns]]></title>
         <id>https://JadeQin.github.io//post/20180521-kubedns</id>
