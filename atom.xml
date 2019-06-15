@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://JadeQin.github.io/</id>
+    <id>https://JadeQin.github.io/</id>
     <title>技术随笔</title>
-    <updated>2019-06-15T08:50:27.897Z</updated>
+    <updated>2019-06-15T08:54:05.002Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://JadeQin.github.io/"/>
-    <link rel="self" href="http://JadeQin.github.io//atom.xml"/>
+    <link rel="alternate" href="https://JadeQin.github.io/"/>
+    <link rel="self" href="https://JadeQin.github.io//atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>http://JadeQin.github.io//images/avatar.png</logo>
-    <icon>http://JadeQin.github.io//favicon.ico</icon>
+    <logo>https://JadeQin.github.io//images/avatar.png</logo>
+    <icon>https://JadeQin.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 技术随笔</rights>
     <entry>
         <title type="html"><![CDATA[about]]></title>
-        <id>http://JadeQin.github.io//post/about</id>
-        <link href="http://JadeQin.github.io//post/about">
+        <id>https://JadeQin.github.io//post/about</id>
+        <link href="https://JadeQin.github.io//post/about">
         </link>
         <updated>2019-06-15T08:49:03.000Z</updated>
         <content type="html"><![CDATA[<hr>
@@ -23,8 +23,8 @@ date: 2018-05-07T17:46:39+08:00</h2>
     </entry>
     <entry>
         <title type="html"><![CDATA[Kubernetes 服务发现 — kube-dns]]></title>
-        <id>http://JadeQin.github.io//post/20180521-kubedns</id>
-        <link href="http://JadeQin.github.io//post/20180521-kubedns">
+        <id>https://JadeQin.github.io//post/20180521-kubedns</id>
+        <link href="https://JadeQin.github.io//post/20180521-kubedns">
         </link>
         <updated>2018-05-20T23:07:46.000Z</updated>
         <content type="html"><![CDATA[<h2 id="服务发现">服务发现</h2>
@@ -234,8 +234,8 @@ CONTAINER ID        IMAGE                                              COMMAND  
     </entry>
     <entry>
         <title type="html"><![CDATA[Java Module System State]]></title>
-        <id>http://JadeQin.github.io//post/java-module-system-state</id>
-        <link href="http://JadeQin.github.io//post/java-module-system-state">
+        <id>https://JadeQin.github.io//post/java-module-system-state</id>
+        <link href="https://JadeQin.github.io//post/java-module-system-state">
         </link>
         <updated>2015-11-10T23:08:15.000Z</updated>
         <content type="html"><![CDATA[<h2 id="摘要">摘要：</h2>
@@ -307,8 +307,8 @@ Import-Package: org.osgi.framework;version=&quot;1.3.0&quot;
     </entry>
     <entry>
         <title type="html"><![CDATA[Maven Filters 使用]]></title>
-        <id>http://JadeQin.github.io//post/maven-filters</id>
-        <link href="http://JadeQin.github.io//post/maven-filters">
+        <id>https://JadeQin.github.io//post/maven-filters</id>
+        <link href="https://JadeQin.github.io//post/maven-filters">
         </link>
         <updated>2015-06-19T02:07:41.000Z</updated>
         <content type="html"><![CDATA[<h1 id="场景">场景</h1>
@@ -365,8 +365,8 @@ Maven本身提供了一种解决方案，能够在编译过程中，对相关内
     </entry>
     <entry>
         <title type="html"><![CDATA[安装Docker Registry]]></title>
-        <id>http://JadeQin.github.io//post/install-docker-registry</id>
-        <link href="http://JadeQin.github.io//post/install-docker-registry">
+        <id>https://JadeQin.github.io//post/install-docker-registry</id>
+        <link href="https://JadeQin.github.io//post/install-docker-registry">
         </link>
         <updated>2015-06-10T23:07:59.000Z</updated>
         <content type="html"><![CDATA[<h1 id="镜像库搭建">镜像库搭建</h1>
@@ -406,8 +406,8 @@ Maven本身提供了一种解决方案，能够在编译过程中，对相关内
     </entry>
     <entry>
         <title type="html"><![CDATA[Accumulo Compact]]></title>
-        <id>http://JadeQin.github.io//post/accumulo-compact</id>
-        <link href="http://JadeQin.github.io//post/accumulo-compact">
+        <id>https://JadeQin.github.io//post/accumulo-compact</id>
+        <link href="https://JadeQin.github.io//post/accumulo-compact">
         </link>
         <updated>2015-06-03T23:07:46.000Z</updated>
         <content type="html"><![CDATA[<p>Accumulo中，Tablet Server用于处理数据业务，table有可能分成多个tablet，每个tablet在HDFS中对应着一个目录，目录里面放着具体的数据文件。</p>
@@ -428,8 +428,8 @@ compact，合并文件</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Accumulo Write]]></title>
-        <id>http://JadeQin.github.io//post/accumulo-write</id>
-        <link href="http://JadeQin.github.io//post/accumulo-write">
+        <id>https://JadeQin.github.io//post/accumulo-write</id>
+        <link href="https://JadeQin.github.io//post/accumulo-write">
         </link>
         <updated>2015-05-28T23:07:37.000Z</updated>
         <content type="html"><![CDATA[<h1 id="写入">写入</h1>
@@ -447,8 +447,8 @@ compact，合并文件</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Java 对象序列化]]></title>
-        <id>http://JadeQin.github.io//post/serialize-pojo</id>
-        <link href="http://JadeQin.github.io//post/serialize-pojo">
+        <id>https://JadeQin.github.io//post/serialize-pojo</id>
+        <link href="https://JadeQin.github.io//post/serialize-pojo">
         </link>
         <updated>2015-05-17T23:07:27.000Z</updated>
         <content type="html"><![CDATA[<h1 id="目的">目的</h1>
