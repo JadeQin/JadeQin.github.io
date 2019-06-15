@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Maven Filters 使用 | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://JadeQin.github.io//favicon.ico?v=1560588328740">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://JadeQin.github.io//styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10147768-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10147768-2');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://JadeQin.github.io/">
+        <img src="http://JadeQin.github.io//images/avatar.png?v=1560588328740" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://JadeQin.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Maven Filters 使用</h2>
+            <div class="post-date">2015-06-19</div>
+            
+            <div class="post-content">
+              <h1 id="场景">场景</h1>
+<p>在项目开发过程中，经常会遇到部署到不同的环境中，比如本地、测试、正式等，如果每次都人为修改相关内容，很容易误操作，也不方便记录。
+Maven本身提供了一种解决方案，能够在编译过程中，对相关内容进行修改。</p>
+<h1 id="方案">方案</h1>
+<ul>
+<li>在build中对resource开启filter</li>
+</ul>
+<pre><code>&lt;resources&gt;
+  &lt;resource&gt;
+    &lt;directory&gt;${basedir}/src/main/resources&lt;/directory&gt;
+    &lt;filtering&gt;true&lt;/filtering&gt;
+  &lt;/resource&gt;
+&lt;/resources&gt;
+</code></pre>
+<ul>
+<li>定义profile，指定默认的profile</li>
+</ul>
+<pre><code>&lt;profiles&gt;
+  &lt;profile&gt;
+    &lt;id&gt;test&lt;/id&gt;
+    &lt;activation&gt;
+      &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+    &lt;/activation&gt;
+    &lt;properties&gt;
+      &lt;profile.env&gt;test&lt;/profile.env&gt;
+    &lt;/properties&gt;
+  &lt;/profile&gt;
+
+  &lt;profile&gt;
+    &lt;id&gt;produce&lt;/id&gt;
+    &lt;properties&gt;
+      &lt;profile.env&gt;produce&lt;/profile.env&gt;
+    &lt;/properties&gt;
+  &lt;/profile&gt;
+&lt;/profiles&gt;
+</code></pre>
+<ul>
+<li>在build中定义filter</li>
+</ul>
+<pre><code>&lt;filters&gt;
+  &lt;filter&gt;${basedir}/profiles/${profile.env}.properties&lt;/filter&gt;
+&lt;/filters&gt;
+</code></pre>
+<ul>
+<li>定义需要修改的内容，比如数据库连接地址</li>
+</ul>
+<pre><code>db.server=***
+</code></pre>
+<p>然后在项目的属性文件中，将原来定义的地址替换为<code>${db.server}</code></p>
+<p>这样，maven在编译时，会根据<code>-P</code>指定的profile或者默认的profile中定义的属性值，替换成实际内容，避免了人为修改的情况。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="http://JadeQin.github.io//post/install-docker-registry">
+                  <h3 class="post-title">
+                    安装Docker Registry
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
