@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://JadeQin.github.io/</id>
     <title>技术随笔</title>
-    <updated>2019-06-17T01:23:17.476Z</updated>
+    <updated>2019-08-01T16:36:51.562Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://JadeQin.github.io/"/>
     <link rel="self" href="https://JadeQin.github.io//atom.xml"/>
@@ -290,7 +290,7 @@ Import-Package: org.osgi.framework;version=&quot;1.3.0&quot;
 }
 </code></pre>
 <p>OSGi最初并没有这个能力，但增加之后能够让它比模块系统的目标走的更远。Holly解释道，“所有的bundle都能够注册成一个解析拦截器，用以过滤匹配，因此包只会暴露给指定的bundle。当导出声明了确定的元数据的包给bundle时，你能够使用相同的机制来预测，或者只是在每周二疯狂的导出包”。</p>
-<p><a href="http://www.infoq.com/news/2015/10/java-state-module-system">查看英文原文</a>
+<p><a href="http://www.infoq.com/news/2015/10/java-state-module-system">查看英文原文</a><br>
 <a href="http://www.infoq.com/cn/news/2015/11/java-state-module-system">InfoQ译文地址</a></p>
 ]]></content>
     </entry>
@@ -301,7 +301,7 @@ Import-Package: org.osgi.framework;version=&quot;1.3.0&quot;
         </link>
         <updated>2015-06-19T02:07:41.000Z</updated>
         <content type="html"><![CDATA[<h1 id="场景">场景</h1>
-<p>在项目开发过程中，经常会遇到部署到不同的环境中，比如本地、测试、正式等，如果每次都人为修改相关内容，很容易误操作，也不方便记录。
+<p>在项目开发过程中，经常会遇到部署到不同的环境中，比如本地、测试、正式等，如果每次都人为修改相关内容，很容易误操作，也不方便记录。<br>
 Maven本身提供了一种解决方案，能够在编译过程中，对相关内容进行修改。</p>
 <h1 id="方案">方案</h1>
 <ul>
@@ -359,7 +359,7 @@ Maven本身提供了一种解决方案，能够在编译过程中，对相关内
         </link>
         <updated>2015-06-10T23:07:59.000Z</updated>
         <content type="html"><![CDATA[<h1 id="镜像库搭建">镜像库搭建</h1>
-<p>docker在pull镜像的时候，默认是从docker.io的公共库里面去获取，一个是受限于网络，另一个是不便于公司内部使用，因此需要搭建自己的内部镜像库。
+<p>docker在pull镜像的时候，默认是从docker.io的公共库里面去获取，一个是受限于网络，另一个是不便于公司内部使用，因此需要搭建自己的内部镜像库。<br>
 有两种方式</p>
 <blockquote>
 <p>安装二进制包</p>
@@ -401,17 +401,17 @@ Maven本身提供了一种解决方案，能够在编译过程中，对相关内
         <updated>2015-06-03T23:07:46.000Z</updated>
         <content type="html"><![CDATA[<p>Accumulo中，Tablet Server用于处理数据业务，table有可能分成多个tablet，每个tablet在HDFS中对应着一个目录，目录里面放着具体的数据文件。</p>
 <p>为了避免tablet中的小文件数过多导致的查询性能降低，Accumulo会定期的合并文件，里面涉及到相关参数。</p>
-<p><em>table.compaction.major.ratio</em>
-ratio会影响合并后的文件数，增加该值会降低合并操作，其工作原理如下：
-如果某一批文件的文件大小总和大于ratio*最大的文件大小，那么就合并这一批文件，否则去掉最大的文件，对剩下的文件做相同操作。
+<p><em>table.compaction.major.ratio</em><br>
+ratio会影响合并后的文件数，增加该值会降低合并操作，其工作原理如下：<br>
+如果某一批文件的文件大小总和大于ratio*最大的文件大小，那么就合并这一批文件，否则去掉最大的文件，对剩下的文件做相同操作。<br>
 所以radio越大，则文件数越多。</p>
-<p><em>tserver.compaction.major.concurrent.max</em>
-<em>tserver.compaction.minor.concurrent.max</em>
+<p><em>tserver.compaction.major.concurrent.max</em><br>
+<em>tserver.compaction.minor.concurrent.max</em><br>
 进行合并操作的线程数大小。</p>
-<p><em>table.file.max</em>
+<p><em>table.file.max</em><br>
 如果当前文件数已经达到最大值，则每次将MemTable中的数据写入HDFS的时候，都会触发一次合并操作（merging minor compaction），将数据写入最小的文件中，从而导致吞吐量的下降。</p>
-<p>除了通过配置值自动完成，还可以通过手动执行的方式来完成。在shell中执行
-flush，将MemTable中的数据写入HDFS
+<p>除了通过配置值自动完成，还可以通过手动执行的方式来完成。在shell中执行<br>
+flush，将MemTable中的数据写入HDFS<br>
 compact，合并文件</p>
 ]]></content>
     </entry>
@@ -441,10 +441,10 @@ compact，合并文件</p>
         </link>
         <updated>2015-05-17T23:07:27.000Z</updated>
         <content type="html"><![CDATA[<h1 id="目的">目的</h1>
-<p>通过对比apache Avro和jackson json的序列化方式及效率，找寻一个比较合适的动态序列化方式。
+<p>通过对比apache Avro和jackson json的序列化方式及效率，找寻一个比较合适的动态序列化方式。<br>
 项目地址：<a href="https://github.com/loveai88/serial-benchmark/tree/master">serial-benchmark</a></p>
 <h1 id="avro的序列化">Avro的序列化</h1>
-<p>Avro本身是从Hadoop项目中独立出来的一个项目，主要用于序列化和rpc，想起以前还有一次面试的时候问，为什么Hadoop要自己做一套序列化和rpc方案，而不用现有的。
+<p>Avro本身是从Hadoop项目中独立出来的一个项目，主要用于序列化和rpc，想起以前还有一次面试的时候问，为什么Hadoop要自己做一套序列化和rpc方案，而不用现有的。<br>
 Avro相较于Thrift而言，最大的特点应该在于可以运行时改变，而不是必须要有声明类的参与。</p>
 <h1 id="jackson-json序列化">jackson json序列化</h1>
 <p>jackson json除了基本的pojo和json的转换之后，还通过多种dataformat的形式，提供了json和其他编码格式的转换，比如avro。</p>
