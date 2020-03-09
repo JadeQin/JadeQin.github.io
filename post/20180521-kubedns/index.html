@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://JadeQin.github.io//favicon.ico?v=1564677377677">
+<link rel="shortcut icon" href="https://JadeQin.github.io//favicon.ico?v=1583740111002">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://JadeQin.github.io//styles/main.css">
 
@@ -45,7 +45,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://JadeQin.github.io/">
-        <img src="https://JadeQin.github.io//images/avatar.png?v=1564677377677" class="site-logo">
+        <img src="https://JadeQin.github.io//images/avatar.png?v=1583740111002" class="site-logo">
         <h1 class="site-title">技术随笔</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -300,10 +300,10 @@ CONTAINER ID        IMAGE                                              COMMAND  
 <p><code>etcd</code>：保存所有的 DNS 数据</p>
 <p><code>kube2sky</code>： 通过 kubernetes API 监听 Service 的变化，然后同步到 etcd</p>
 <p><code>skyDNS</code>：根据 etcd 中的数据，对外提供 DNS 查询服务</p>
-<p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1feisvkwauej30p00a1gm0.jpg" alt="img1"></p>
+<figure data-type="image" tabindex="1"><img src="https://ww3.sinaimg.cn/large/006tNc79gy1feisvkwauej30p00a1gm0.jpg" alt="img1"></figure>
 <h3 id="kubedns-模式">kubeDNS 模式</h3>
 <p>这种模式下，kubeDNS 容器替代了原来的三个容器的功能，它会监听 apiserver 并把所有 service 和 endpoints 的结果在内存中用合适的数据结构保存起来，并对外提供 DNS 查询服务。</p>
-<p><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1feiswjz6hgj30p00a174j.jpg" alt="img2"></p>
+<figure data-type="image" tabindex="2"><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1feiswjz6hgj30p00a174j.jpg" alt="img2"></figure>
 <p><code>kubeDNS</code>：提供了原来 kube2sky + etcd + skyDNS 的功能，可以单独对外提供 DNS 查询服务</p>
 <p><code>dnsmasq</code>： 一个轻量级的 DNS 服务软件，可以提供 DNS 缓存功能。kubeDNS 模式下，dnsmasq 在内存中预留一块大小（默认是 1G）的地方，保存当前最常用的 DNS 查询记录，如果缓存中没有要查找的记录，它会到 kubeDNS 中查询，并把结果缓存起来</p>
 <p>每种模式都可以运行额外的 exec-healthz 容器对外提供 health check 功能，证明当前 DNS 服务是正常的。</p>
